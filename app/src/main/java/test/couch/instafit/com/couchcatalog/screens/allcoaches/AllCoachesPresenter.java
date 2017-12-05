@@ -3,69 +3,48 @@ package test.couch.instafit.com.couchcatalog.screens.allcoaches;
 // Concrete implementation of the Contract for Presenter
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import java.util.List;
+
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import test.couch.instafit.com.couchcatalog.data.source.remote.CoachResponse;
-import test.couch.instafit.com.couchcatalog.data.source.remote.InstaFitApiInterface;
+import test.couch.instafit.com.couchcatalog.data.Coach;
+import test.couch.instafit.com.couchcatalog.data.source.CoachDataSource;
+import test.couch.instafit.com.couchcatalog.data.source.CoachDataSourceMain;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
 public class AllCoachesPresenter implements AllCoachesContract.Presenter {
 
+    // Attached View
+    private final AllCoachesContract.View view;
 
-    AllCoachesContract.View view;
+    // Main Entry caller between presenter and Data Local and Remote
+    private final CoachDataSourceMain coachDataSourceMain;
 
-    public static final String BASE_URL = "https://dev.instafit.com/";
     Retrofit retrofit;
 
-    public AllCoachesPresenter(@NonNull AllCoachesContract.View view) {
+    public AllCoachesPresenter(@NonNull AllCoachesContract.View view, @NonNull CoachDataSourceMain coachDataSourceMain) {
 
-        checkNotNull(view, "Attach view cannot be null");
+        this.view = checkNotNull(view, "Attach view cannot be null");
+        this.coachDataSourceMain = checkNotNull(coachDataSourceMain, "coachDataSourceMain cannot be null");;
 
-        this.view = view;
         this.view.setPresenter(this);
-
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
-
-        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-
-        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        builder.networkInterceptors().add(httpLoggingInterceptor);
-        OkHttpClient okHttpClient = builder.build();
-
-        retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL) // Base Url or Domain
-                .addConverterFactory(GsonConverterFactory.create()) // Serializer
-                .client(okHttpClient) // For logging
-                .build();
     }
 
     @Override
     public void loadCoaches() {
 
-        InstaFitApiInterface apiService = retrofit.create(InstaFitApiInterface.class);
-
-
-        Call<CoachResponse> call = apiService.getCoaches();
-        call.enqueue(new Callback<CoachResponse>() {
+        coachDataSourceMain.getAllCoaches(new CoachDataSource.GetCoachesCallback() {
             @Override
-            public void onResponse(Call<CoachResponse> call, Response<CoachResponse> response) {
-                Log.d("Network", response.message());
+            public void onCoachesLoaded(List<Coach> coaches) {
+
             }
 
             @Override
-            public void onFailure(Call<CoachResponse> call, Throwable t) {
-                Log.e("Network", t.getMessage());
+            public void onNoData() {
+
             }
         });
-
     }
 
     @Override

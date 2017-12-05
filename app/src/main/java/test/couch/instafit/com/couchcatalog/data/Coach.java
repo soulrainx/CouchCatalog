@@ -1,27 +1,65 @@
 package test.couch.instafit.com.couchcatalog.data;
 
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Embedded;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
+@Entity(tableName = "Coaches")
 public class Coach {
 
+    /*
+     *  Room Annotation
+     *  @PrimaryKey
+     *  @NonNull
+     *  @ColumnInfo
+     *  @Embedded
+     *
+     *  Gson
+     *  @SerializedName
+     *  @Expose
+     */
+
+
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "coachId")
     @SerializedName("id")
     @Expose
     private Integer id;
+
+    @Nullable
+    @ColumnInfo(name = "name")
     @SerializedName("name")
     @Expose
     private String name;
+
+    @Nullable
+    @ColumnInfo(name = "description")
     @SerializedName("description")
     @Expose
     private String description;
+
+    @Nullable
+    @ColumnInfo(name = "filter_available")
     @SerializedName("filter_available")
     @Expose
     private Boolean filterAvailable;
+
+    @Nullable
+    @ColumnInfo(name = "avatar")
     @SerializedName("avatar")
     @Expose
     private String avatar;
+
+    @Embedded
     @SerializedName("avatar_pictures")
     @Expose
     private AvatarPictures avatarPictures;

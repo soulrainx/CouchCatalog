@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 
 import test.couch.instafit.com.couchcatalog.R;
 import test.couch.instafit.com.couchcatalog.util.ActivityUtils;
+import test.couch.instafit.com.couchcatalog.util.Injector;
 
 public class AllCoachesActivity extends AppCompatActivity {
 
@@ -20,16 +21,16 @@ public class AllCoachesActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
 
-        AllCoachesFragment tasksFragment =
+        AllCoachesFragment allCoachesFragment =
                 (AllCoachesFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
-        if (tasksFragment == null) {
+        if (allCoachesFragment == null) {
             // Create the fragment
-            tasksFragment = AllCoachesFragment.newInstance();
+            allCoachesFragment = AllCoachesFragment.newInstance();
             ActivityUtils.addFragmentToActivity(
-                    getSupportFragmentManager(), tasksFragment, R.id.contentFrame);
+                    getSupportFragmentManager(), allCoachesFragment, R.id.contentFrame);
         }
 
         // Create the presenter
-        presenter = new AllCoachesPresenter(tasksFragment);
+        presenter = new AllCoachesPresenter(allCoachesFragment, Injector.provideCoachDataSourceMain(getApplicationContext()));
     }
 }

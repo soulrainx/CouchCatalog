@@ -37,4 +37,5 @@ ext {
     supportLibraryVersion = '27.0.2'
     guavaVersion = '18.0'
     retrofit = '2.3.0'
+    roomVersion = "1.0.0"
 }
