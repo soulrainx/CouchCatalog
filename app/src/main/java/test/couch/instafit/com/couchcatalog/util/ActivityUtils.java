@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.architecture.blueprints.todoapp.util;
+package test.couch.instafit.com.couchcatalog.util;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;

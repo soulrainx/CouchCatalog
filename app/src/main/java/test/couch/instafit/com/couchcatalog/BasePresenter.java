@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.architecture.blueprints.todoapp;
+package test.couch.instafit.com.couchcatalog;
 
 public interface BasePresenter {
 

@@ -7,7 +7,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/akibalogo2"/>
+            android:src="@drawable/instafitsmall"/>
     </item>
 
 </layer-list>

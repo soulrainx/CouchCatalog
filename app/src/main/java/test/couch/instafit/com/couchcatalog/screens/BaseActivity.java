@@ -1,4 +1,4 @@
-package test.couch.instafit.com.couchcatalog.activity;
+package test.couch.instafit.com.couchcatalog.screens;
 
 import android.app.ProgressDialog;
 import android.support.annotation.VisibleForTesting;
