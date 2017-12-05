@@ -1,6 +1,7 @@
 package test.couch.instafit.com.couchcatalog.data.source;
 
 import android.support.annotation.NonNull;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -35,8 +36,8 @@ public class CoachDataSourceMain implements CoachDataSource {
      * @param coachDataSourceRemote the device storage data source
      * @return the {@link CoachDataSourceMain} instance
      */
-    public static CoachDataSourceMain getInstance(CoachDataSource coachDataSourceLocal,
-                                                  CoachDataSource coachDataSourceRemote) {
+    public static CoachDataSourceMain getInstance(@NonNull CoachDataSource coachDataSourceLocal,
+                                                  @NonNull CoachDataSource coachDataSourceRemote) {
         if (INSTANCE == null) {
             INSTANCE = new CoachDataSourceMain(coachDataSourceLocal, coachDataSourceRemote);
         }
@@ -46,12 +47,12 @@ public class CoachDataSourceMain implements CoachDataSource {
 
     @Override
     public void saveCoach(@NonNull Coach coach) {
-
+        // TO-DO
     }
 
     @Override
     public void deleteAllCoaches() {
-
+        localDataSource.deleteAllCoaches();
     }
 
     @Override
@@ -74,7 +75,7 @@ public class CoachDataSourceMain implements CoachDataSource {
                 // No local Data Call Remote
                 remoteDataSource.getAllCoaches(new GetCoachesCallback() {
                     @Override
-                    public void onCoachesLoaded(List<Coach> coaches) {
+                    public void onCoachesLoaded(@NonNull List<Coach> coaches) {
                         //Remote coaches fetched send it back to caller
                         refreshLocalDataSource(coaches);
                         callback.onCoachesLoaded(coaches);
@@ -91,7 +92,7 @@ public class CoachDataSourceMain implements CoachDataSource {
         });
     }
 
-    private void refreshLocalDataSource(List<Coach> coaches) {
+    private void refreshLocalDataSource(@NonNull List<Coach> coaches) {
         localDataSource.deleteAllCoaches();
         for (Coach task : coaches) {
             localDataSource.saveCoach(task);

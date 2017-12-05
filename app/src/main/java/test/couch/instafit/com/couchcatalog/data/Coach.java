@@ -64,14 +64,16 @@ public class Coach {
     @Expose
     private AvatarPictures avatarPictures;
 
+    @NonNull
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(@NonNull Integer id) {
         this.id = id;
     }
 
+    @Nullable
     public String getName() {
         return name;
     }
@@ -80,6 +82,7 @@ public class Coach {
         this.name = name;
     }
 
+    @Nullable
     public String getDescription() {
         return description;
     }
@@ -88,6 +91,7 @@ public class Coach {
         this.description = description;
     }
 
+    @Nullable
     public Boolean getFilterAvailable() {
         return filterAvailable;
     }
@@ -96,6 +100,7 @@ public class Coach {
         this.filterAvailable = filterAvailable;
     }
 
+    @Nullable
     public String getAvatar() {
         return avatar;
     }

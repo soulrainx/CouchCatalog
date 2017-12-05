@@ -65,6 +65,7 @@ public class AppExecutors {
     }
 
     private static class MainThreadExecutor implements Executor {
+        @NonNull
         private Handler mainThreadHandler = new Handler(Looper.getMainLooper());
 
         @Override

@@ -38,4 +38,5 @@ ext {
     guavaVersion = '18.0'
     retrofit = '2.3.0'
     roomVersion = "1.0.0"
+    glide = "4.4.0"
 }

@@ -1,5 +1,6 @@
 package test.couch.instafit.com.couchcatalog.screens.allcoaches;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,9 +18,9 @@ public class AllCoachesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_coaches);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(myToolbar);
-
+        // Set up the toolbar.
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         AllCoachesFragment allCoachesFragment =
                 (AllCoachesFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);

@@ -4,6 +4,7 @@ import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 import test.couch.instafit.com.couchcatalog.data.Coach;
 
@@ -17,7 +18,7 @@ public abstract class CoachDatabase extends RoomDatabase {
 
     private static final Object sLock = new Object();
 
-    public static CoachDatabase getInstance(Context context) {
+    public static CoachDatabase getInstance(@NonNull Context context) {
 
         synchronized (sLock) {
             if (INSTANCE == null) {

@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="test.couch.instafit.com.couchcatalog.screens.allcoaches.CoachInfoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/coach_info_image"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        android:text="@string/hello_blank_fragment" />
+
+    <TextView
+        android:id="@+id/coach_info_name"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/coach_info_description_webview"
+        android:layout_centerHorizontal="true"
+        android:elegantTextHeight="true"
+        android:gravity="center_horizontal"
+        android:maxLength="70"
+        android:maxLines="1"
+        android:text="Klans Huntelar Huntelar Huntelar Huntelar Huntelar"
+        android:textSize="25sp" />
+
+    <WebView
+        android:id="@+id/coach_info_description_webview"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scrollbars="none" />
+
+</RelativeLayout>
