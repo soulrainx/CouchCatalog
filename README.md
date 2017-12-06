@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/soulrainx/CouchCatalog.svg?branch=master)](https://travis-ci.org/soulrainx/CouchCatalog)
+
 # CouchCatalog
 
 MVP architecture usage
