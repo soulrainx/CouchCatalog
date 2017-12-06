@@ -21,7 +21,6 @@ android {
     buildTypes {
 
         debug {
-            applicationIdSuffix ".development"
             debuggable true
             minifyEnabled false
             useProguard false
@@ -29,7 +28,6 @@ android {
 
         staging {
             initWith debug
-            applicationIdSuffix ".development"
         }
 
         release {
