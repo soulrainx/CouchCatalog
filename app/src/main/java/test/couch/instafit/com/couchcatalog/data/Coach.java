@@ -27,6 +27,14 @@ public class Coach {
      *  @Expose
      */
 
+    public Coach(@NonNull Integer id, String name, String description, Boolean filterAvailable, String avatar, AvatarPictures avatarPictures) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.filterAvailable = filterAvailable;
+        this.avatar = avatar;
+        this.avatarPictures = avatarPictures;
+    }
 
     @PrimaryKey
     @NonNull

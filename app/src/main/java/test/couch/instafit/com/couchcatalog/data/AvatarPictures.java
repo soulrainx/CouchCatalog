@@ -1,13 +1,18 @@
 package test.couch.instafit.com.couchcatalog.data;
 
-import android.arch.persistence.room.ColumnInfo;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class AvatarPictures {
 
-    /*
+
+    public AvatarPictures(String fullSize, String big, String medium, String small) {
+        this.fullSize = fullSize;
+        this.big = big;
+        this.medium = medium;
+        this.small = small;
+    }
+/*
      *  Room Annotation
      *  @PrimaryKey
      *  @NonNull

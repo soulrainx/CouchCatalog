@@ -21,4 +21,7 @@ public interface CoachDao {
 
     @Query("DELETE FROM Coaches")
     void deleteCoaches();
+
+    @Query("SELECT * FROM Coaches WHERE coachId = :coachId")
+    Coach getCoachById(Integer coachId);
 }
