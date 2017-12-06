@@ -1,6 +1,8 @@
 
 [![Build Status](https://travis-ci.org/soulrainx/CouchCatalog.svg?branch=master)](https://travis-ci.org/soulrainx/CouchCatalog)
 
+#### [HockeyApp download page](https://rink.hockeyapp.net/apps/559ad5c35e78469a85d50c2c43c065b4/app_versions/1)
+
 # CouchCatalog
 
 MVP architecture usage
