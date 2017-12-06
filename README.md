@@ -13,3 +13,5 @@ Build Variants targeting different source Sets
 Instrumented Test to validate Room abstraction 
 Dependency injection to show case the capabilites of the SourceSets and a Static Injector class
 Land portrait layouts 
+
+TO-DO Proguard tweak, Gen Signed version via Gradle ,hook Constant delivery with repo
