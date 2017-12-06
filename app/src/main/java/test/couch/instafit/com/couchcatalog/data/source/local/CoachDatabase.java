@@ -8,7 +8,7 @@ import android.support.annotation.NonNull;
 
 import test.couch.instafit.com.couchcatalog.data.Coach;
 
-@Database(entities = {Coach.class}, version = 1)
+@Database(entities = {Coach.class}, version = 1,exportSchema = true)
 public abstract class CoachDatabase extends RoomDatabase {
 
     private static CoachDatabase INSTANCE;
