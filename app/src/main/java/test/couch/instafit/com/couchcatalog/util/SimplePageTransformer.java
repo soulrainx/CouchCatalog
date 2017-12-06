@@ -13,7 +13,7 @@ import java.util.List;
 public class SimplePageTransformer implements ViewPager.PageTransformer {
 
     private List<ParallaxTransformInformation> mViewsToParallax
-            = new ArrayList<ParallaxTransformInformation>();
+            = new ArrayList<>();
 
     public SimplePageTransformer() {
     }

@@ -1,7 +1,6 @@
 package test.couch.instafit.com.couchcatalog.data.source;
 
 import android.support.annotation.NonNull;
-import android.widget.Toast;
 
 import java.util.List;
 

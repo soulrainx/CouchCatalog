@@ -1,38 +1,60 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="test.couch.instafit.com.couchcatalog.screens.allcoaches.CoachInfoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:id="@+id/coach_info_image"
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/hello_blank_fragment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/userthumb" />
 
     <TextView
         android:id="@+id/coach_info_name"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/coach_info_description_webview"
         android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
         android:elegantTextHeight="true"
         android:gravity="center_horizontal"
         android:maxLength="70"
         android:maxLines="1"
         android:text="Klans Huntelar Huntelar Huntelar Huntelar Huntelar"
-        android:textSize="25sp" />
+        android:textSize="@dimen/avatarNameTextSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coach_info_image" />
 
     <WebView
         android:id="@+id/coach_info_description_webview"
-        android:layout_width="match_parent"
-        android:layout_height="255dp"
+        android:layout_width="383dp"
+        android:layout_height="0dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:scrollbars="none" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coach_info_name"
+        app:layout_constraintVertical_bias="0.04000002" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

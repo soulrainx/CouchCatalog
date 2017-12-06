@@ -28,7 +28,7 @@ public class AllCoachesFragmentAdapter extends FragmentStatePagerAdapter {
     /**
      * Return the Fragment associated with a specified position.
      *
-     * @param position
+     * @param position position of the item
      */
     @NonNull
     @Override
